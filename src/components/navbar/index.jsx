@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
-        <div className={styles.logo}>ShopEase</div>
+        <div className={styles.logo}>ShopCart</div>
 
         <ul className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
           <li>

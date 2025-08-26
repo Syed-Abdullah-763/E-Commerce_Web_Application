@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.logo}>ShopEase</div>
+        <div className={styles.logo}>ShopCart</div>
 
         <ul className={styles.links}>
           <li>
