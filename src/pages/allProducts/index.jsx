@@ -1,13 +1,12 @@
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import Card from "../../components/card";
-import Banner from "../../components/banner";
-import styles from "./home.module.css";
+import styles from "./allproducts.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const HomePage = () => {
+const AllProducts = () => {
   const [obj, setObj] = useState([]);
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <Banner />
 
       <div className={styles.cardContainer}>
         {obj.map(({ title, price, rating, image, id }) => {
@@ -50,4 +48,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default AllProducts;

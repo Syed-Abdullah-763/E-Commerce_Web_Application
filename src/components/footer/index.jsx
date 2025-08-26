@@ -1,19 +1,18 @@
-import React from 'react'
-import styles from "./footer.module.css"
+import React from "react";
+import styles from "./footer.module.css";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        
-        <div className={styles.logo}>E-Commerce</div>
+        <div className={styles.logo}>ShopEase</div>
 
         <ul className={styles.links}>
           <li>
-            <NavLink 
-              to="/" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
                 isActive ? `${styles.link} ${styles.activeLink}` : styles.link
               }
             >
@@ -21,9 +20,9 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/about" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
                 isActive ? `${styles.link} ${styles.activeLink}` : styles.link
               }
             >
@@ -31,9 +30,9 @@ const Footer = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/products" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
                 isActive ? `${styles.link} ${styles.activeLink}` : styles.link
               }
             >
@@ -54,6 +53,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;

@@ -1,0 +1,28 @@
+.banner {
+  position: relative;
+  height: 80vh;
+  background: url("https://source.unsplash.com/1600x900/?fashion,shopping")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}

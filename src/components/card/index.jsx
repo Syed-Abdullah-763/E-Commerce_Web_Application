@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./card.module.css";
+import { Link } from "react-router-dom";
 
-const Card = ({tittle, price, rating, imgUrl}) => {
+const Card = ({ tittle, price, rating, imgUrl, onClick }) => {
+  console.log(onClick);
+
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} onClick={onClick}>
         <div className={styles.top}>
           <img src={imgUrl} alt="" />
         </div>
