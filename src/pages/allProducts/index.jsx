@@ -5,9 +5,11 @@ import styles from "./allproducts.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import InputField from "../../components/inputField";
 
 const AllProducts = () => {
   const [obj, setObj] = useState([]);
+  const [inputVal, setInputVal] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -23,24 +25,57 @@ const AllProducts = () => {
     }
   };
 
+  const filtered = obj.filter(({ title }) =>
+    title.toLowerCase().includes(inputVal.toLowerCase())
+  );
+
   return (
     <>
       <Navbar />
 
+      <div className={styles.inputContainer}>
+        <InputField
+          type="text"
+          placeholder="Search Your Product Here.."
+          onChange={(event) => {
+            setInputVal(event.target.value);
+          }}
+          value={inputVal}
+        />
+      </div>
+
       <div className={styles.cardContainer}>
-        {obj.map(({ title, price, rating, image, id }) => {
-          return (
-            <Link className={styles.link} to={`/product/${id}`}>
-              <Card
-                tittle={title}
-                price={price}
-                rating={rating.rate}
-                imgUrl={image}
-                key={id}
-              />
-            </Link>
-          );
-        })}
+        {inputVal == "" ? (
+          obj.map(({ title, price, rating, image, id }) => {
+            return (
+              <Link className={styles.link} to={`/product/${id}`}>
+                <Card
+                  tittle={title}
+                  price={price}
+                  rating={rating.rate}
+                  imgUrl={image}
+                  key={id}
+                />
+              </Link>
+            );
+          })
+        ) : filtered.length > 0 ? (
+          filtered.map(({ title, price, rating, image, id }) => {
+            return (
+              <Link className={styles.link} to={`/product/${id}`}>
+                <Card
+                  tittle={title}
+                  price={price}
+                  rating={rating.rate}
+                  imgUrl={image}
+                  key={id}
+                />
+              </Link>
+            );
+          })
+        ) : (
+          <p className={styles.notFound}>❌ Search result not found</p>
+        )}
       </div>
 
       <Footer />

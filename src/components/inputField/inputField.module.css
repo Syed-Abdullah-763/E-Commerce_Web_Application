@@ -1,0 +1,91 @@
+:root {
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-border-focus: #4f46e5;
+  --input-text: #0f172a;
+  --label-color: #334155;
+  --error-color: #dc2626;
+  --radius: 12px;
+  --gap: 8px;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.inputWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--input-border);
+  padding: 10px 12px;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.input {
+  --pad-left: 0px;
+  flex: 1 1 auto;
+  border: 0;
+  outline: none;
+  font-size: 1rem;
+  color: var(--input-text);
+  background: transparent;
+  padding: 6px 0;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.inputWrap:focus-within {
+  border-color: var(--input-border-focus);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.08);
+  transform: translateY(-1px);
+}
+
+.hasError {
+  border-color: var(--error-color);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --radius: 10px;
+  }
+
+  .wrapper {
+    padding: 0 8px;
+    max-width: 100%;
+  }
+
+  .inputWrap {
+    padding: 9px 10px;
+  }
+
+  .input {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    max-width: 720px;
+  }
+
+  .input {
+    font-size: 1.05rem;
+  }
+}

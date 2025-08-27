@@ -9,9 +9,20 @@
   gap: 20px;
 }
 
+.inputContainer {
+  padding: 20px 0px;
+}
+
 .link {
   text-decoration: none;
   color: #000;
+}
+
+.notFound {
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
 }
 
 @media only screen and (max-width: 855px) {
